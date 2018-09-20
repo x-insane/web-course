@@ -1,0 +1,30 @@
+.frame {
+	border: 1px solid #ddd;
+
+	header {
+		font-size: 1.8rem;
+		text-align: center;
+		padding: .9rem;
+
+		background-color: #e8e7e3;
+		color: #727272;
+	}
+}
+
+.content {
+	li {
+		padding: 1.2rem 3rem 1.1rem;
+		cursor: pointer;
+		transition-property: background-color, color;
+		transition-duration: .2s;
+	}
+
+	li:hover {
+		background-color: #b4b4b4;
+		color: #fff;
+	}
+
+	@media screen and (max-width: 800px) {
+		display: none;
+	}
+}

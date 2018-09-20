@@ -1,0 +1,8 @@
+程序由webpack构建，主要使用了react和less，需要编译之后才能从浏览器访问，编译前需要安装依赖：npm install
+
+编译调试：npm run dev/watch
+构建输出：npm run build
+
+public目录下有最后一次开发模式下编译的文件，可以直接使用
+
+.htaccess用于Apache中将URL导向public目录

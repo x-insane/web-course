@@ -1,0 +1,84 @@
+@import '~@/style/variables.less';
+
+.header {
+	// position
+	position: fixed;
+    top: 0;
+    left: 0;
+
+    // visible
+    z-index: 100;
+    overflow: hidden;
+    background-color: rgba(255,255,255,.5);
+
+    // size
+    box-sizing: border-box;
+    width: 100%;
+    height: 10rem;
+    padding: 4rem 0;
+    margin-top: .2rem;
+
+    // transition
+    transition: all .4s ease;
+
+    &.shrinked {
+    	height: 5rem;
+    	padding: 1.7rem 0;
+    	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    }
+
+    @media screen and (max-width: 800px) {
+    	padding: 1.7rem 0;
+    	height: 5rem;
+
+	    &[data-nav-active=true] {
+	    	height: 8.1rem;
+	    	padding: 1.7rem 0;
+	    	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	    }
+	}
+
+	a {
+		color: @primary-color;
+	}
+}
+
+.content {
+	margin: 0 auto;
+	width: 80rem;
+	max-width: 85%;
+
+	&:after {
+		content: '.';
+		height: 0;
+		visibility: hidden;
+		clear: both;
+	}
+}
+
+.title {
+	float: left;
+	font-size: 1.8rem;
+}
+
+.nav {
+	float: right;
+	transition: all .5s ease;
+
+	@media screen and (max-width: 800px) {
+		display: none;
+		&.collapse {
+			display: initial;
+			margin-top: 1.8rem;
+		}
+	}
+}
+
+.hamburger {
+	float: right;
+	display: none;
+
+	@media screen and (max-width: 800px) {
+		display: initial;
+	}
+}

@@ -1,0 +1,15 @@
+.twinkling > div {
+	animation: twinkling 1.1s infinite ease-in-out;
+	animation-direction:alternate;
+}
+
+@keyframes twinkling {
+	from {
+		background-color: darken(#dfebc5, 5%);
+		color: #333;
+	}
+	to {
+		background-color: #dfebc5;
+		color: #666;
+	}
+}

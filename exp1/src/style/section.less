@@ -1,0 +1,150 @@
+.row {
+	// 布局
+	padding: 5rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.header {
+		// 大小
+		flex-basis: 0;
+		flex-grow: 35;
+
+		// 布局
+		margin-left: -2.5rem;
+
+		// 子布局
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.circle {
+			// 大小
+			width: 10rem;
+			height: 10rem;
+
+			// 文字
+			font-family: Youyuan;
+			font-size: 2rem;
+			line-height: 10rem;
+			color: #daaadb;
+			text-align: center;
+			letter-spacing: 1px;
+			text-shadow: 1px 1px rgba(0,0,0,.2);
+
+			// 背景
+			border-radius: 5rem;
+			background-color: #ffe3d6;
+			box-shadow: 1px 2px 7px rgba(0,0,0,.3);
+		}
+	}
+
+	.content {
+		// 大小
+		flex-basis: 0;
+		flex-grow: 65;
+
+		// 布局
+		padding: 2rem 3rem;
+		margin-right: 5rem;
+		box-sizing: border-box;
+
+		// 背景
+		background-color: #dfebc5;
+		box-shadow: 1px 2px 7px rgba(0,0,0,.3);
+		border-radius: 4px;
+
+		// 文字
+		line-height: 1.8;
+		color: #555;
+
+		a {
+			// 链接文字
+			color: #555;
+		}
+
+		p {
+			// 首行缩进
+			text-indent: 2em;
+
+			// 段间距
+			margin-bottom: .7rem;
+
+			// 最后一个段落
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&.course ol {
+			width: 25%;
+			display: inline-block;
+			margin-left: 5rem;
+		}
+
+		&.movie ul {
+			width: 45%;
+			display: inline-block;
+			margin-left: 2rem;
+		}
+
+		&.photo {
+			padding: 10px 10px 2px 10px;
+			img {
+				width: 100%;
+				border-radius: 4px;
+			}
+		}
+	}
+
+	&.reverse {
+		flex-direction: row-reverse;
+
+		.header {
+			// 布局反向微调
+			margin-left: 0;
+			margin-right: -2.5rem;
+		}
+
+		.content {
+			// 布局反向微调
+			margin-left: 5rem;
+			margin-right: 0;
+		}
+	}
+
+	// 适配手机端
+	@media screen and (max-width: 800px) {
+		// 布局调整
+		flex-direction: column;
+		&.reverse {
+			flex-direction: column;
+		}
+
+		.header {
+			z-index: 1;
+		}
+
+		.content {
+			margin-top: 4rem;
+			width: 100%;
+
+			// 默认布局
+			&.course ol,
+			&.movie ul {
+				width: initial;
+				display: initial;
+				margin-left: initial;
+			}
+		}
+
+		.header,
+		&.reverse .header,
+		.content,
+		&.reverse .content {
+			// 布局归位
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
