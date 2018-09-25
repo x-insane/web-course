@@ -82,12 +82,120 @@ const data = [
 	{
 		name: "table",
 		text: "<table>",
-		info: [
-			"<table> 标签定义 HTML 表格。",
-			"简单的 HTML 表格由 table 元素以及一个或多个 tr、th 或 td 元素组成。",
-			"tr 元素定义表格行，th 元素定义表头，td 元素定义表格单元。",
-			"更复杂的 HTML 表格也可能包括 caption、col、colgroup、thead、tfoot 以及 tbody 元素。"
-		]
+		html: <div>
+			<p>{`<table>`} 标签定义 HTML 表格。</p>
+			<p>简单的 HTML 表格由 table 元素以及一个或多个 tr、th 或 td 元素组成。</p>
+			<p>tr 元素定义表格行，th 元素定义表头，td 元素定义表格单元。</p>
+			<p>更复杂的 HTML 表格也可能包括 caption、col、colgroup、thead、tfoot 以及 tbody 元素。</p>
+			<p>下面是一个例子（内容来自w3school）：</p>
+			<table className={s.table}>
+				<tbody>
+					<tr>
+						<th style={{width: '20%'}}>属性</th>
+						<th style={{width: '20%'}}>值</th>
+						<th style={{width: '60%'}}>描述</th>
+					</tr>
+					<tr>
+						<td>align</td>
+						<td>
+							<ul>
+								<li>left</li>
+								<li>center</li>
+								<li>right</li>
+							</ul>
+						</td>
+						<td>
+							<p>不赞成使用。请使用样式代替。</p>
+							<p>规定表格相对周围元素的对齐方式。</p>
+						</td>
+					</tr>
+					<tr>
+						<td>bgcolor</td>
+						<td>
+							<ul>
+								<li><i>rgb(x,x,x)</i></li>
+								<li><i>#xxxxxx</i></li>
+								<li><i>colorname</i></li>
+							</ul>
+						</td>
+						<td>
+							<p>不赞成使用。请使用样式代替。</p>
+							<p>规定表格的背景颜色。</p>
+						</td>
+					</tr>
+					<tr>
+						<td>border</td>
+						<td><i>pixels</i></td>
+						<td>规定表格边框的宽度。</td>
+					</tr>
+					<tr>
+						<td>cellpadding</td>
+						<td>
+							<ul>
+								<li><i>pixels</i></li>
+								<li><i>%</i></li>
+							</ul>
+						</td>
+						<td>规定单元边沿与其内容之间的空白。</td>
+					</tr>
+					<tr>
+						<td>cellspacing</td>
+						<td>
+							<ul>
+								<li><i>pixels</i></li>
+								<li><i>%</i></li>
+							</ul>
+						</td>
+						<td>规定单元格之间的空白。</td>
+					</tr>
+					<tr>
+						<td>frame</td>
+						<td>
+							<ul>
+								<li>void</li>
+								<li>above</li>
+								<li>below</li>
+								<li>hsides</li>
+								<li>lhs</li>
+								<li>rhs</li>
+								<li>vsides</li>
+								<li>box</li>
+								<li>border</li>
+							</ul>
+						</td>
+						<td>规定外侧边框的哪个部分是可见的。</td>
+					</tr>
+					<tr>
+						<td>rules</td>
+						<td>
+							<ul>
+								<li>none</li>
+								<li>groups</li>
+								<li>rows</li>
+								<li>cols</li>
+								<li>all</li>
+							</ul>
+						</td>
+						<td>规定内侧边框的哪个部分是可见的。</td>
+					</tr>
+					<tr>
+						<td>summary</td>
+						<td><i>text</i></td>
+						<td>规定表格的摘要。</td>
+					</tr>
+					<tr>
+						<td>width</td>
+						<td>
+							<ul>
+								<li><i>%</i></li>
+								<li><i>pixels</i></li>
+							</ul>
+						</td>
+						<td>规定表格的宽度。</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	},
 	{
 		name: "definition",
@@ -102,21 +210,54 @@ const data = [
 	{
 		name: "pre",
 		text: "<pre>",
-		info: [
-			"pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。",
-			"<pre> 标签的一个常见应用就是用来表示计算机的源代码。",
-			"可以导致段落断开的标签（例如标题、<p> 和 <address> 标签）绝不能包含在 <pre> 所定义的块里。尽管有些浏览器会把段落结束标签解释为简单地换行，但是这种行为在所有浏览器上并不都是一样的。",
-			"pre 元素中允许的文本可以包括物理样式和基于内容的样式变化，还有链接、图像和水平分隔线。当把其他标签（比如 <a> 标签）放到 <pre> 块中时，就像放在 HTML/XHTML 文档的其他部分中一样即可。"
-		]
+		html: <div>
+			<p>pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。"</p>
+			<p>pre 标签的一个常见应用就是用来表示计算机的源代码。"</p>
+			<p>可以导致段落断开的标签（例如标题、 p 和 address 标签）绝不能包含在 pre 标签所定义的块里。尽管有些浏览器会把段落结束标签解释为简单地换行，但是这种行为在所有浏览器上并不都是一样的。"</p>
+			<p>pre 元素中允许的文本可以包括物理样式和基于内容的样式变化，还有链接、图像和水平分隔线。当把其他标签（比如 a 标签）放到 pre 块中时，就像放在 HTML/XHTML 文档的其他部分中一样即可。</p>
+			<p>例如：</p>
+			<pre>{`
+	下面这段话是用 <pre> 标签包裹的
+	所有 HTML 特殊符号都会被转换为对应的实体
+	所有换行符、空格以及制表符都会保留
+			`}</pre>
+		</div>
 	},
-	// {
-	// 	name: "",
-	// 	text: "<>",
-	// 	info: [
-	// 		"",
-	// 		""
-	// 	]
-	// },
+	{
+		name: "blockquote",
+		text: "<blockquote>",
+		html: <div>
+			<p>用于标记长引用（以块的形式），cite属性用于规定引用的来源</p>
+			<p>例如：</p>
+			<blockquote className={s["code-block"]} cite="http://www.w3school.com.cn/tags/tag_blockquote.asp">
+				<div>Here is a long quotation here is a long quotation here is a long quotation.</div>
+				<div>here is a long quotation here is a long quotation here is a long quotation.</div>
+				<div>here is a long quotation here is a long quotation here is a long quotation.</div>
+			</blockquote>
+			<p>短引用可用 q 标签： <q>{`<q>这是一个 <q> 标签</q>`}</q></p>
+		</div>
+	},
+	{
+		name: "code",
+		text: "<code>",
+		html: <div>
+			<p>{`<code> 标签用于表示计算机源代码或者其他机器可以阅读的文本内容。`}</p>
+			<p>{`软件代码的编写者已经习惯了编写源代码时文本表示的特殊样式。<code> 标签就是为他们设计的。包含在该标签内的文本将用等宽、类似电传打字机样式的字体（Courier）显示出来，对于大多数程序员和 W3School 的用户来说，这应该是十分熟悉的。`}</p>
+			<p>{`只应该在表示计算机程序源代码或者其他机器可以阅读的文本内容上使用 <code> 标签。虽然 <code> 标签通常只是把文本变成等宽字体，但它暗示着这段文本是源程序代码。将来的浏览器有可能会加入其他显示效果。例如，程序员的浏览器可能会寻找 <code> 片段，并执行某些额外的文本格式化处理，如循环和条件判断语句的特殊缩进等。`}</p>
+			<p>例如：</p>
+			<code className={s["code-block"]}>{
+`int main() {
+	State s;
+	s.d[0] = s.d[1] = s.d[2] = 'B';
+	s.d[3] = s.d[4] = s.d[5] = 'W';
+	s.d[6] = 0; s.g = 0;
+	cout << A(s);
+	return 0;
+}`
+			}</code>
+			<p>{`注意：如果只是希望使用等宽字体的效果，请使用 <tt> 标签。或者，如果想要在严格限制为等宽字体格式的文本中显示编程代码，请使用 <pre> 标签。`}</p>
+		</div>
+	}
 ]
 
 // 获取滚动条位置
@@ -185,7 +326,11 @@ export default class Html extends Component {
 					data.map((item, key) => [
 						<dt key={key} id={item.name}>{item.text}</dt>,
 						<dd key={-key-1}>
-							{ item.info.map((text, k) => <p key={k}>{text}</p>) }
+							{
+								item.html ?
+									item.html :
+									item.info.map((text, k) => <p key={k}>{text}</p>)
+							}
 						</dd>
 					])
 				}

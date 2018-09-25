@@ -30,7 +30,7 @@ class App extends Component {
 		return (
 			<Router>
 				<ScrollToTop>
-					<NavBar ref="navbar" title="梦的天空之城">
+					<NavBar ref="navbar" title="梦的天空之城" href="https://github.com/x-insane">
 						<li><Link to="/" onClick={this.cancelCollapse.bind(this)}>首页</Link></li>
 						<li><Link to="/html" onClick={this.cancelCollapse.bind(this)}>HTML回顾</Link></li>
 						<li><Link to="/css" onClick={this.cancelCollapse.bind(this)}>CSS回顾</Link></li>

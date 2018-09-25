@@ -53,7 +53,9 @@ export default class NavBar extends React.Component {
 					className={[this.state.scrollTop ? "" : s.shrinked, s.header].join(" ")}
 					data-nav-active={this.state.collapse}>
 			<div className={s.content}>
-				<a className={s.title}>{this.props.title}</a>
+				<a className={s.title} href={this.props.href} rel="noreferrer noopener" target="_blank">
+					{this.props.title}
+				</a>
 			    <Hamburger className={s.hamburger}
 			    		ref="hamburger"
 			    		onCollapse={this.navCollapseCallback.bind(this)} />
