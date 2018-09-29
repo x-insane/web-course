@@ -66,6 +66,20 @@ $(function() {
 			location.hash = ""
 	})
 
+	// 过滤HTML特殊字符
+	function escapeHtml(text) {
+		var map = {
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			'"': '&quot;',
+			"'": '&#039;',
+			'\n': '<br>',
+			' ': '&nbsp;'
+		}
+		return text.replace(/[&<>"' \n]/g, function(m) { return map[m] })
+	}
+
 	// 获取随机GUID
 	function guid() {
 		function s4() { return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1) }
@@ -79,8 +93,8 @@ $(function() {
 			(function(t) {
 				var item = $(
 					t.replace("{{id}}", k)
-					.replace("{{title}}", e.title.replace(/ /g, "&nbsp;"))
-					.replace("{{content}}", e.content.replace(/\n/g, "<br>").replace(/ /g, "&nbsp;"))
+					.replace("{{title}}", escapeHtml(e.title))
+					.replace("{{content}}", escapeHtml(e.content))
 					.replace("{{time}}", e.time)
 				)
 				item.click(function() {
