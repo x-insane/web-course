@@ -62,6 +62,7 @@
 	.navbar-nav.navbar-collapse {
 		display: initial;
 		margin-top: 1.8rem;
+		width: 100%;
 	}
 }
 .navbar-hamburger {
