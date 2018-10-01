@@ -1,0 +1,45 @@
+body {
+	margin: 0 auto 75px;
+	width: 80%;
+	max-width: 800px;
+}
+
+.background {
+	display: block;
+	margin: 50px 0;
+	height: 120px;
+	background-image: url(../img/background.png);
+	background-size: auto 250px;
+}
+
+.person {
+	color: #777;
+	line-height: 1.5;
+	padding-top: 18px;
+	font-size: 16px;
+}
+
+.person header {
+	color: #555;
+	font-size: 18px;
+	margin-bottom: 3px;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		width: 100%;
+	}
+
+	.background {
+		margin: 0 0 40px;
+	}
+
+	.person {
+		padding: 15px 30px;
+	}
+
+	.person header {
+		text-align: center;
+		margin-bottom: 7px;
+	}
+}
