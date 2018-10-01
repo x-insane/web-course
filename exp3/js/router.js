@@ -4,7 +4,7 @@
 	// hash路由 - 简单单层路由
 	function route() {
 		var pages = document.getElementsByClassName("router-page")
-		var $page = "sort" // 默认路由
+		var $page = "page-sort" // 默认路由
 		if (location.hash !== "")
 			$page = "page-" + location.hash.substring(1)
 		for (var i=0;i<pages.length;i++) {
