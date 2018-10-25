@@ -6,7 +6,10 @@ $(function() {
 	var edit_id = null
 
 	// 重置hash状态
-	location.hash = ""
+	if (location.pathname && location.search != undefined)
+		history.replaceState({}, '', location.pathname + location.search)
+	else
+		location.hash = ""
 
 	$(window).on('beforeunload', function() {
 		// 提示用户先保存
@@ -14,8 +17,11 @@ $(function() {
 			return false
 	})
 
+	var old_scroll // 编辑时保存滚动条位置
+
 	$(window).on("hashchange", function() {
 		if (location.hash === "#edit") {
+			old_scroll = $(window).scrollTop()
 			$(".main-page").hide()
 			$(".edit-page").show()
 		} else {
@@ -57,13 +63,18 @@ $(function() {
 				$(".select-button").show()
 				$(".main-page .return-button").show()
 			}
+			// 编辑结束时恢复滚动条位置
+			if (old_scroll) {
+				$(window).scrollTop(old_scroll)
+				old_scroll = null
+			}
 		}
 	})
 
 	$(window).on('keydown', function(e) {
 		// Esc 键盘事件
 		if (e.keyCode === 27)
-			location.hash = ""
+			history.back()
 	})
 
 	// 过滤HTML特殊字符
