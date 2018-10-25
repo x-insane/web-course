@@ -113,8 +113,13 @@ $(function() {
 						location.hash = "edit"
 					}
 				})
-				var timer = null;
+				var timer = null
+				var start = null
 				item.on('touchstart', function(e) {
+					start = {
+						x: e.touches[0].screenX,
+						y: e.touches[0].screenY
+					}
 					var $item = $(this)
 					timer = setTimeout(function() {
 						if (location.hash !== "#select") {
@@ -124,8 +129,25 @@ $(function() {
 						}
 					}, 400)
 				})
+				item.on('touchmove', function(e) {
+					var point = {
+						x: e.touches[0].screenX,
+						y: e.touches[0].screenY
+					}
+					if (start) {
+						if (Math.abs(point.x - start.x) > 10 || Math.abs(point.y - start.y) > 10) {
+							clearTimeout(timer)
+							timer = null
+							start = null
+						}
+					}
+				})
 				item.on('touchend', function(e) {
-					clearTimeout(timer)
+					if (start) {
+						clearTimeout(timer)
+						timer = null
+						start = null
+					}
 				})
 				item.find(".checkbox").click(function() {
 					if (location.hash !== "#select") {
@@ -161,7 +183,8 @@ $(function() {
 	})
 
 	$(".return-button").click(function() {
-		location.hash = ""
+		// location.hash = ""
+		history.back()
 	})
 
 	$(".delete-button").click(function() {
@@ -193,6 +216,7 @@ $(function() {
 		})
 		.catch(function(err) {
 			console.log("网络有点问题哦~")
+			items = []
 		})
 	} else
 		render()
